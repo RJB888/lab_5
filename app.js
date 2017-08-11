@@ -71,11 +71,23 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2,3,4]; //eslint-disable-line
 
 function sumArray(testArray){ //eslint-disable-line
-
+  var outputText = '';
+  var arrayTotal = 0;
+  for (var i = 0; i < testArray.length; i++){
+    arrayTotal = sum(arrayTotal, testArray[i])[0];
+    if (i < testArray.length - 1){
+      outputText += testArray[i] + ',';
+    }
+    else {
+      outputText += testArray[i];
+    }
+  }
+  outputText += ' was passed in as an array of numbers, and ' + arrayTotal + ' is their sum.';
+  return [arrayTotal, outputText];
 }
 
 // TODO: Here is the test for sumArray(); uncomment it to run it
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
