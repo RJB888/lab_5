@@ -6,11 +6,13 @@ Write a function called sum() that takes in two numbers as arguments and then re
 "The sum of 4 and 7 is 11."
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSum() function below and check the console to see if the test passes.
 For TODO item, be sure to change it to say DONE when you have successfully completed the task*/
+var problem1Log, problem2Log, problem3Log, problem3Log2, problem4Log, problem5Log;
 
 // TODO: Write your code here
 function sum(a,b){ //eslint-disable-line
   var result = a + b;
   var output = 'The sum of ' + a + ' and ' + b + ' is ' + result + '.';
+  problem1Log = result;
   return [result, output];
 }
 
@@ -29,6 +31,7 @@ Test this function by hand in the console to get it working, and when you think 
 function multiply(a,b){ //eslint-disable-line
   var product = a * b;
   var textLine = 'The product of ' + a + ' and ' + b + ' is ' + product + '.';
+  problem2Log = product;
   return [product, textLine];
 }
 
@@ -49,6 +52,8 @@ Test this function by hand in the console to get it working, and when you think 
 function sumAndMultiply(a,b,c){ //eslint-disable-line
   var total = sum(sum(a,b)[0],c)[0];
   var product = multiply(multiply(a,b)[0], c)[0];
+  problem3Log = total;
+  problem3Log2 = product;
   return [total, product, a + ' and ' + b + ' and ' + c + ' sum to ' + total + '.', 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + product + '.' ];
 }
 
@@ -83,6 +88,7 @@ function sumArray(testArray){ //eslint-disable-line
     }
   }
   outputText += ' was passed in as an array of numbers, and ' + arrayTotal + ' is their sum.';
+  problem4Log = arrayTotal;
   return [arrayTotal, outputText];
 }
 
@@ -112,6 +118,7 @@ function multiplyArray(testArray){ //eslint-disable-line
     }
   }
   outputText += ' have a product of ' + arrayProduct + '.';
+  problem5Log = arrayProduct;
   return [arrayProduct, outputText];
 }
 
@@ -119,3 +126,18 @@ function multiplyArray(testArray){ //eslint-disable-line
 testMultiplyArray(2,3,4);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
+
+var problem1Para = document.getElementById('problem1');
+problem1Para.innerText = problem1Log;
+
+var problem2Para = document.getElementById('problem2');
+problem2Para.innerText = problem2Log;
+
+var problem3Para = document.getElementById('problem3');
+problem3Para.innerText = problem3Log + ', ' + problem3Log2;
+
+var problem4Para = document.getElementById('problem4');
+problem4Para.innerText = problem4Log;
+
+var problem5Para = document.getElementById('problem5');
+problem5Para.innerText = problem5Log;
